@@ -27,7 +27,8 @@ El plan separa los elementos construidos en el paquete de las tareas que necesit
 - [ ] Desplegar frontend en Netlify y configurar `VITE_API_URL`.
 - [ ] Ejecutar pruebas de humo sobre las URLs públicas.
 - [ ] Completar el informe con resultados de pruebas de producción.
-- [ ] Crear repositorio público en GitHub y subir los commits de cada tarea.
+- [x] Preparar el historial local `main` con un commit por cada tarea (14 commits de trabajo, más el commit base).
+- [ ] Publicar el historial local en el repositorio remoto de GitHub (requiere conexión y autorización de escritura).
 - [ ] Pegar el enlace del repositorio en el campus.
 
 ## Hitos sugeridos
@@ -71,3 +72,7 @@ Cada elemento de esta lista debe convertirse en un commit pequeño y separado al
 | No hay veterinarios cargados | Crear cuentas de prueba y asignar rol `vet` desde PostgreSQL con acceso autorizado. |
 | No se consigue publicar antes de la fecha límite | Desplegar primero base y backend, luego frontend; probar cada URL de forma independiente. |
 | Las reglas cambian durante la cursada | Actualizar `SPEC.md`, tests y criterios de aceptación en el mismo cambio. |
+
+## Historial de cambios
+
+Los commits locales por tarea están detallados en [`docs/COMMIT-LOG.md`](./docs/COMMIT-LOG.md). El remoto `origin` apunta a `https://github.com/agustinbruno07/PataTurnos.git`. El push no se ejecutó desde este entorno: la conexión a GitHub no estuvo disponible.
