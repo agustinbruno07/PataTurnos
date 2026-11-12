@@ -1,0 +1,24 @@
+{
+  "name": "pataturnos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema web de gestión de turnos para clínicas veterinarias",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend",
+    "test": "npm test --workspace backend",
+    "start": "npm start --workspace backend",
+    "verify": "npm test && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  }
+}
