@@ -24,4 +24,4 @@ Cada bloque funcional se registró en un commit separado. El primer commit conse
 | 13 | `9e2bcbf` | Configurar CI y despliegue en Render y Netlify. |
 | 14 | `fe288d7` | Completar README y guías de instalación y publicación. |
 
-Los identificadores pueden comprobarse con `git log --oneline --decorate`. Estos commits están en el repositorio local entregado; todavía no se ejecutó el `git push` al servidor de GitHub desde este entorno.
+El commit `3e9fc8e` agregó este registro y actualizó el plan. Los identificadores pueden comprobarse con `git log --oneline --decorate`. Los commits están en el repositorio local entregado; todavía no se ejecutó el `git push` desde este entorno. Para integrarlos sobre el `main` real, aplicar el archivo de parches según [`GITHUB.md`](./GITHUB.md).

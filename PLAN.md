@@ -75,4 +75,4 @@ Cada elemento de esta lista debe convertirse en un commit pequeño y separado al
 
 ## Historial de cambios
 
-Los commits locales por tarea están detallados en [`docs/COMMIT-LOG.md`](./docs/COMMIT-LOG.md). El remoto `origin` apunta a `https://github.com/agustinbruno07/PataTurnos.git`. El push no se ejecutó desde este entorno: la conexión a GitHub no estuvo disponible.
+Los commits locales por tarea están detallados en [`docs/COMMIT-LOG.md`](./docs/COMMIT-LOG.md). El remoto `origin` apunta a `https://github.com/agustinbruno07/PataTurnos.git`. El ZIP recibido no incluía `.git`, por lo que el historial local parte de una copia del árbol. Se generó `PataTurnos-main-commits.patch` para aplicar la secuencia de commits sobre el `main` remoto original sin hacer un push forzado. El push no se ejecutó desde este entorno porque no hubo conectividad con GitHub.
