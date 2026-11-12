@@ -4,16 +4,22 @@
 
 PataTurnos permite que los clientes creen una cuenta, registren mascotas y soliciten turnos; que los veterinarios consulten su agenda y administren la atención; y que la administración supervise usuarios, servicios y actividad.
 
+## Aplicación publicada
+
+- **Frontend:** https://pataturnos.netlify.app/
+- **Backend (API):** https://pataturnos-api.onrender.com/
+- **Estado del backend:** https://pataturnos-api.onrender.com/health
+- **Repositorio GitHub:** https://github.com/agustinbruno07/PataTurnos
+
 ## Estado del proyecto
 
 - Aplicación frontend React + Vite.
 - API REST Node.js + Express.
 - Persistencia PostgreSQL.
 - Autenticación JWT y autorización por roles (`client`, `vet`, `admin`).
-- Reglas de negocio documentadas en [`SPEC.md`](./SPEC.md).
-- Instrucciones para agentes en [`AGENTS.md`](./AGENTS.md).
-- Plan, arquitectura, modelo de datos, API, pruebas y despliegue documentados en [`docs/`](./docs/).
-- El despliegue público todavía requiere crear/configurar las cuentas y variables de entorno del propietario del repositorio.
+- Reglas de negocio documentadas en [SPEC.md](https://github.com/agustinbruno07/PataTurnos/blob/main/SPEC.md).
+- Instrucciones para agentes en [AGENTS.md](https://github.com/agustinbruno07/PataTurnos/blob/main/AGENTS.md).
+- Plan, arquitectura, modelo de datos, API, pruebas y despliegue documentados en `docs/`.
 
 ## Requisitos
 
@@ -24,8 +30,20 @@ PataTurnos permite que los clientes creen una cuenta, registren mascotas y solic
 ## Ejecutar localmente
 
 1. Clonar el repositorio y entrar en su carpeta.
-2. Crear el archivo de entorno del backend (PowerShell: `Copy-Item .env.example backend/.env`; Git Bash/Linux/macOS: `cp .env.example backend/.env`):
 
+   ```bash
+   git clone https://github.com/agustinbruno07/PataTurnos.git
+   cd PataTurnos
+   ```
+
+2. Crear el archivo de entorno del backend:
+
+   PowerShell:
+   ```powershell
+   Copy-Item .env.example backend/.env
+   ```
+
+   Git Bash/Linux/macOS:
    ```bash
    cp .env.example backend/.env
    ```
@@ -52,7 +70,10 @@ PataTurnos permite que los clientes creen una cuenta, registren mascotas y solic
    npm run dev
    ```
 
-6. Abrir [http://localhost:5173](http://localhost:5173). La API responde en [http://localhost:4000/health](http://localhost:4000/health).
+6. Abrir:
+   - Frontend: http://localhost:5173
+   - API: http://localhost:4000
+   - Estado de la API: http://localhost:4000/health
 
 Para apuntar el frontend a otra API, crear `frontend/.env.local` con:
 
@@ -60,7 +81,7 @@ Para apuntar el frontend a otra API, crear `frontend/.env.local` con:
 VITE_API_URL=http://localhost:4000/api
 ```
 
-### Inicializar o actualizar el esquema manualmente
+## Inicializar o actualizar el esquema manualmente
 
 El backend aplica el esquema SQL idempotente y los servicios de ejemplo al iniciar. También se puede ejecutar:
 
@@ -68,7 +89,7 @@ El backend aplica el esquema SQL idempotente y los servicios de ejemplo al inici
 npm run migrate --workspace backend
 ```
 
-### Crear cuentas de prueba
+## Crear cuentas de prueba
 
 1. Registrarse desde `/registro`. El registro público siempre crea usuarios con rol `client`.
 2. Para habilitar el panel de veterinario o de administración, una persona autorizada debe cambiar el rol desde PostgreSQL. Ejemplo:
@@ -113,24 +134,34 @@ pataturnos/
 │   │   └── pages/
 │   └── index.html
 ├── docs/                   # Plan, pruebas, arquitectura y despliegue
-├── SPEC.md                 # Reglas de negocio y criterios de aceptación
-├── AGENTS.md               # Reglas para agentes de desarrollo
+├── SPEC.md
+├── AGENTS.md
 └── docker-compose.yml
 ```
 
 ## Documentación de entrega
 
-- [`SPEC.md`](./SPEC.md): alcance, actores, flujos, reglas numeradas y criterios de aceptación.
-- [`AGENTS.md`](./AGENTS.md): instrucciones para agentes y desarrolladores.
-- [`PLAN.md`](./PLAN.md): tareas y estado.
-- [`TEST-REPORT.md`](./TEST-REPORT.md): informe de pruebas.
-- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md): arquitectura y decisiones técnicas.
-- [`docs/DATABASE.md`](./docs/DATABASE.md): modelo de datos.
-- [`docs/API.md`](./docs/API.md): contrato de endpoints.
-- [`docs/DEPLOY.md`](./docs/DEPLOY.md): publicación en Render, Neon y Netlify.
-- [`docs/SECURITY.md`](./docs/SECURITY.md): consideraciones de seguridad.
-- [`docs/CHECKLIST-ENTREGA.md`](./docs/CHECKLIST-ENTREGA.md): correspondencia con la consigna.
-- [`docs/GITHUB.md`](./docs/GITHUB.md): creación del repo público y push.
+Todos los documentos están disponibles directamente desde GitHub:
+
+- [README.md — Información general del proyecto](https://github.com/agustinbruno07/PataTurnos/blob/main/README.md)
+- [SPEC.md — Alcance, reglas de negocio y criterios de aceptación](https://github.com/agustinbruno07/PataTurnos/blob/main/SPEC.md)
+- [AGENTS.md — Instrucciones para agentes de desarrollo](https://github.com/agustinbruno07/PataTurnos/blob/main/AGENTS.md)
+- [PLAN.md — Plan de trabajo y tareas](https://github.com/agustinbruno07/PataTurnos/blob/main/PLAN.md)
+- [TEST-REPORT.md — Informe de pruebas](https://github.com/agustinbruno07/PataTurnos/blob/main/TEST-REPORT.md)
+- [ARCHITECTURE.md — Arquitectura y decisiones técnicas](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/ARCHITECTURE.md)
+- [DATABASE.md — Modelo de datos](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/DATABASE.md)
+- [API.md — Documentación de endpoints](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/API.md)
+- [DEPLOY.md — Guía de publicación en Render, Neon y Netlify](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/DEPLOY.md)
+- [SECURITY.md — Consideraciones de seguridad](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/SECURITY.md)
+- [CHECKLIST-ENTREGA.md — Checklist de la consigna](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/CHECKLIST-ENTREGA.md)
+- [GITHUB.md — Configuración del repositorio y publicación](https://github.com/agustinbruno07/PataTurnos/blob/main/docs/GITHUB.md)
+
+## Plataformas utilizadas
+
+- [GitHub — Repositorio del proyecto](https://github.com/agustinbruno07/PataTurnos)
+- [Netlify — Frontend publicado](https://pataturnos.netlify.app/)
+- [Render — Backend publicado](https://pataturnos-api.onrender.com/)
+- [Neon — Base de datos PostgreSQL](https://console.neon.tech/)
 
 ## Licencia
 
